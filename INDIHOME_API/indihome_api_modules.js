@@ -99,7 +99,7 @@ async function refresh_token() {
 	        token[key] = body.data[key]
 	      }
 	    }
-		Keychain.set('indihome_token', JSON.stringify(body.data))
+		Keychain.set('indihome_token', JSON.stringify(token))
 	}
 	else {
 		console.warn('cannot refresh token')
