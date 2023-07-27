@@ -17,7 +17,7 @@ if (profile !== false) {
 	widget.addTexts('IndiHome', 20, Color.white())
 	widget.addTexts(packageName, 10, Color.lightGray(), 5)
 	widget.addTexts(`${remainingQuota} ${unit}`, 18, Color.green())
-	widget.addTexts(`${totalQuota} ${unit}`, 18, Color.white(), 10)
-	widget.addTexts(`updated @ ${new Date().toLocaleTimeString().slice(0,5)}`, 10, Color.lightGray(), 0, 1, true)
+	widget.addTexts(`${totalQuota} ${unit}`, 18, Color.white(), 15)
+	widget.addTexts(`${new Date().toLocaleTimeString().slice(0,5)}`, 10, Color.lightGray(), 0, 1, true)
 	widget.presentSmall()
 }

@@ -113,15 +113,16 @@ async function refresh_token() {
     'Content-type': com.mime.urlencoded,
   }
   const token = Keychain.contains('xl_api_token') ? JSON.parse(Keychain.get('xl_api_token')) : {}
-  var payload = `scope=openid+profile&client_id=${client_id}&grant_type=refresh_token&response_type=code&refresh_token=${token.refresh_token}`
-  var req = await com.request('POST', url.token, headers, payload)
-  if (req.body.access_token !== undefined) {
+  const payload = `scope=openid+profile&client_id=${client_id}&grant_type=refresh_token&response_type=code&refresh_token=${token.refresh_token}`
+  let req = await com.request('POST', url.token, headers, payload)
+  let body = JSON.parse(req.body)
+  if (body.access_token !== undefined) {
     for (const key in token) {
-      if (req.body[key] !== undefined) {
-        token[key] = req.body[key]
+      if (body[key] !== undefined) {
+        token[key] = body[key]
       }
     }
-    Keychain.set('xl_api_token', JSON.stringify(req.body))
+    Keychain.set('xl_api_token', JSON.stringify(token))
     return true
   }
   return false
