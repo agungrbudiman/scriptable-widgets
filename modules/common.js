@@ -115,3 +115,23 @@ function secToMin(second) {
   return parseFloat((second / 60).toFixed(1))
 }
 module.exports.secToMin = secToMin
+
+// https://stackoverflow.com/q/18883601
+function getDistanceFromLatLonInKm(coordinate1, coordinate2) {
+  let c1 = coordinate1.split(',')
+  let lat1 = c1[0]; let lon1 = c1[1]
+  let c2 = coordinate2.split(',')
+  let lat2 = c2[0]; let lon2 = c2[1]
+  var R = 6371; // Radius of the earth in km
+  var dLat = (lat2-lat1) * (Math.PI/180);
+  var dLon = (lon2-lon1) * (Math.PI/180); 
+  var a = 
+  Math.sin(dLat/2) * Math.sin(dLat/2) +
+  Math.cos(lat1 * (Math.PI/180)) * Math.cos(lat2 * (Math.PI/180)) * 
+  Math.sin(dLon/2) * Math.sin(dLon/2)
+  ; 
+  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+  var d = R * c; // Distance in km
+  return d;
+}
+module.exports.getDistanceFromLatLonInKm = getDistanceFromLatLonInKm
