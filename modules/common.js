@@ -45,7 +45,7 @@ module.exports.genPKCE = genPKCE
 function genSignature(key, string) {
   const nonce = randString(16)
   const timestamp = Date.now()
-  const digest = hash.sha256.hmac.update(key, timestamp + nonce + string)
+  const digest = hash.sha256.hmac.update(key, timestamp + nonce + string).digest()
   const encoded = base64.encode(String.fromCharCode.apply(null, new Uint8Array(digest)), true)
   return {'nonce': nonce, 'timestamp': timestamp, 'signature': encoded}
 }
