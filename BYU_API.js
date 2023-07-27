@@ -19,11 +19,11 @@ if (req != false) {
 
   widget.addTexts(`IDR ${credit}`, 18, Color.green(), 2)
   widget.addTexts('Data', 10, Color.lightGray())
-  widget.addTexts(`${com.byteToGiB(plan.used_byte)} GB / ${com.byteToGiB(plan.remaining_byte)} GB`, 14, Color.white(), 2)
+  widget.addTexts(`${com.byteToGiB(plan.remaining_byte)} GB / ${plan.total_offering} GB`, 14, Color.white(), 2)
   widget.addTexts('Addon', 10, Color.lightGray())
-  widget.addTexts(`${com.byteToGiB(addon.used_byte)} GB / ${com.byteToGiB(addon.remaining_byte)} GB`, 14, Color.white(), 2)
+  widget.addTexts(`${com.byteToGiB(addon.remaining_byte)} GB / ${addon.total_offering} GB`, 14, Color.white(), 2)
   widget.addTexts('Voice', 10, Color.lightGray())
-  widget.addTexts(`${voice.used} ${voice.unit_en.slice(0,3)} / ${voice.total_offering - voice.used} ${voice.unit_en.slice(0,3)}`, 14, Color.white(), 5)
+  widget.addTexts(`${voice.total_offering - voice.used} ${voice.unit_en.slice(0,3)} / ${voice.total_offering} ${voice.unit_en.slice(0,3)}`, 14, Color.white(), 5)
   widget.addTexts(`By.U @ ${new Date().toLocaleTimeString().slice(0,5)} | ${diff.days} days`, 8, Color.lightGray(), 0, 1, true)
   widget.presentSmall()
 }
