@@ -10,3 +10,7 @@ Login with email and password, enter OTP sent to mobile when asked
 Parameter `city_name;lat,long` e.g. `Jakarta;-6.21,106.84`
 
 Sumber data gempa : [Data Gempabumi Terbuka BMKG](https://data.bmkg.go.id/gempabumi/)
+## Credits
+sha256.js : https://github.com/emn178/js-sha256
+
+base64.js : https://gist.github.com/chrisveness/e121cffb51481bd1c142
