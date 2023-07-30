@@ -51,7 +51,7 @@ if (session === true) {
       widget.addTexts(`${com.byteToGiB(quota.local.remaining)} GB / ${com.byteToGiB(quota.local.total)} GB`, 14, Color.white(), 2)
       widget.addTexts('Voice', 10, Color.lightGray())
       widget.addTexts(`${com.secToMin(quota.voice.remaining)} Min / ${com.secToMin(quota.voice.total)} Min`, 14, Color.white(), 5)
-      widget.addTexts(`XL @ ${new Date().toLocaleTimeString().slice(0,5)} | ${diff.days} days`, 8, Color.lightGray(), 0, 1, true)
+      widget.addTexts(`XL @ ${new Date().toLocaleTimeString().slice(0,5)} | ${diff.days} days`, 8, Color.white(), 0, 1, true)
       widget.presentSmall()
     })
   })

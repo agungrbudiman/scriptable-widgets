@@ -24,7 +24,7 @@ if (req != false) {
   widget.addTexts(`${com.byteToGiB(addon.remaining_byte)} GB / ${addon.total_offering} GB`, 14, Color.white(), 2)
   widget.addTexts('Voice', 10, Color.lightGray())
   widget.addTexts(`${voice.total_offering - voice.used} ${voice.unit_en.slice(0,3)} / ${voice.total_offering} ${voice.unit_en.slice(0,3)}`, 14, Color.white(), 5)
-  widget.addTexts(`By.U @ ${new Date().toLocaleTimeString().slice(0,5)} | ${diff.days} days`, 8, Color.lightGray(), 0, 1, true)
+  widget.addTexts(`By.U @ ${new Date().toLocaleTimeString().slice(0,5)} | ${diff.days} days`, 8, Color.white(), 0, 1, true)
   widget.presentSmall()
 }
 else {
